@@ -1,0 +1,9 @@
+.event{
+    -fx-background-color: rgba(65, 70, 65, 0.4);
+}
+
+#buttonConvertion{
+    -fx-background-image:
+            url(/images/convertir.png);
+    -fx-background-size: stretch;
+}
