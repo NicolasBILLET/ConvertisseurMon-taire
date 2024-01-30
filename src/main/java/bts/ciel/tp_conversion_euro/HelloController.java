@@ -1,12 +1,14 @@
 package bts.ciel.tp_conversion_euro;
 
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class HelloController implements Initializable {
@@ -14,6 +16,7 @@ public class HelloController implements Initializable {
 
     @FXML
     public ToggleGroup Convert_Select;
+    public ComboBox boxSelect;
     @FXML
     private RadioButton Euro_DollarButton;
     @FXML
@@ -45,11 +48,32 @@ public class HelloController implements Initializable {
                 dollarTextField.getStyleClass().addAll("text-field", "text-input","event");
                 miseAJour();
         });
-//        Convert_Select.getProperties().addListener(event ->{
-//
-//        });
+//        Euro_DollarButton.setOnAction(event -> euro_Dollarconvert());
+        fabriqueDonnees();
+        boxSelect.setOnAction(event -> comboSelection(event));
     }
 
+    private ArrayList<String> fabriqueDonnees() {
+        ArrayList<String> conversion = new ArrayList<>();
+        conversion.add("Euro - Dollar");
+        conversion.add("Dollar - Euro");
+        conversion.add("Euro - Livre");
+        conversion.add("Livre - Euro");
+        conversion.add("Euro - Yen");
+        conversion.add("Yen - Euro");
+        conversion.forEach(element-> boxSelect.getItems().add(element));
+
+        return conversion;
+    }
+
+    private void comboSelection(Event event) {
+        int index = ((ComboBox)event.getSource()).getSelectionModel().getSelectedIndex();
+        System.out.println(((ComboBox<?>) event.getSource()).getItems().get(index));
+    }
+
+
+//    private void euro_Dollarconvert() {
+//    }
 
 
     private void miseAJour() throws NumberFormatException{

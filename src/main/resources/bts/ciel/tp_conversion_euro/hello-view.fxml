@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
@@ -26,5 +27,6 @@
       <RadioButton fx:id="Dollar_EuroButton" layoutX="537.0" layoutY="251.0" mnemonicParsing="false" text="Dollar US - Euro" toggleGroup="$Convert_Select" />
       <Label fx:id="labelMoneyUp" layoutX="464.0" layoutY="138.0" />
       <Label fx:id="labelMoneyDown" layoutX="464.0" layoutY="298.0" />
+      <ComboBox fx:id="boxSelect" layoutX="537.0" layoutY="314.0" prefWidth="150.0" />
    </children>
 </AnchorPane>
