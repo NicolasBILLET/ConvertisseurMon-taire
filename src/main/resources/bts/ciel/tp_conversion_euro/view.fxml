@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="463.0" prefWidth="554.0" stylesheets="@appstyle/stylesheet.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bts.ciel.tp_conversion_euro.Controller">
+   <children>
+      <Label fx:id="label_Init" layoutX="294.0" layoutY="98.0" prefHeight="40.0" prefWidth="149.0" />
+      <Button id="convertButton" fx:id="buttonConvertion" layoutX="137.0" layoutY="181.0" mnemonicParsing="false" prefHeight="81.0" prefWidth="87.0" stylesheets="@appstyle/stylesheet.css" />
+      <Label fx:id="label_Final" layoutX="293.0" layoutY="299.0" prefHeight="40.0" prefWidth="138.0" />
+      <ComboBox fx:id="comboSelection" layoutX="368.0" layoutY="209.0" prefWidth="150.0" />
+      <TextField fx:id="textField_Init" layoutX="80.0" layoutY="93.0" prefHeight="50.0" prefWidth="202.0" />
+      <TextField fx:id="textField_Final" layoutX="80.0" layoutY="294.0" prefHeight="50.0" prefWidth="202.0" />
+   </children>
+</AnchorPane>
