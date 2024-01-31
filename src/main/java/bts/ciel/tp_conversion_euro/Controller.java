@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class Controller implements Initializable {
-
+    //Déclaration des variables
     public ComboBox comboSelection;
     @FXML
     private Label label_Init;
@@ -34,12 +34,14 @@ public class Controller implements Initializable {
     public Controller() {
     }
 
+    //Méthode qui s'initialise à chaque lancement du programme
     public void initialize(URL location, ResourceBundle resources){
         buttonConvertion.setOnAction(event -> convertion());
         fabriqueDonnees();
         comboSelection.setOnAction(event -> comboSelection(event));
     }
 
+    //Méthode qui fabrique des devises et les ajoute à une ArrayList
     private void fabriqueDonnees() {
         devise.add(new ConversionDevise("Euro - Dollar", "Euro", "Dollar", tx_Euro_Dollar));
         devise.add(new ConversionDevise("Dollar - Euros", "Dollar", "Euro", tx_Euro_Dollar));
@@ -50,6 +52,7 @@ public class Controller implements Initializable {
         devise.forEach(element-> comboSelection.getItems().add(element.getPrompt()));
     }
 
+    //Méthode qui effectue la conversion en fonction du choix des devises.
     private void convertion(){
         try{
             valeur_Init = Double.parseDouble(textField_Init.getText());
@@ -66,6 +69,7 @@ public class Controller implements Initializable {
         }
     }
 
+    //Méthode qui crée une alerte en cas de mauvaise saisie dans le textField_Init
     private void alerteFormat(){
         Alert dialogW = new Alert(Alert.AlertType.WARNING);
         dialogW.setTitle("Erreur de saisie");
@@ -74,11 +78,13 @@ public class Controller implements Initializable {
         dialogW.showAndWait();
     }
 
+    //Méthode qui permet l'affichage des devises sélectionnées à côté des textFields
     private void comboSelection(Event event) {
         int index = ((ComboBox)event.getSource()).getSelectionModel().getSelectedIndex();
         label_Init.setText(devise.get(index).getSource());
         label_Final.setText(devise.get(index).getCible());
         System.out.println(index);
-
     }
+
+    //Manque méthode qui initialise un choix de conversion par défaut au lancement du programme
 }
